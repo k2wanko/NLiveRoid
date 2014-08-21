@@ -1,0 +1,31 @@
+apply plugin: 'android'
+
+android {
+    compileSdkVersion 19
+    buildToolsVersion "20.0.0"
+
+    defaultConfig {
+        applicationId "nliveroid.nlr.main"
+        minSdkVersion 4
+        targetSdkVersion 4
+
+        ndk {
+            moduleName "enc"
+        }
+    }
+
+    buildTypes {
+        release {
+            runProguard false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.txt'
+        }
+    }
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:+'
+    compile files('libs/android-jatts-0.0.2.jar')
+    compile files('libs/libAdMaker.jar')
+    compile files('libs/tagsoup-1.2.jar')
+    compile files('libs/twitter4j-core-3.0.5.jar')
+}
